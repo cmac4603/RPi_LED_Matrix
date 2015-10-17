@@ -1,0 +1,29 @@
+import RPi.GPIO as GPIO
+import time
+
+TOP_1 = 21
+TOP_2 = 20
+TOP_3 = 16
+TOP_4 = 12
+TOP_5 = 9
+TOP_6 = 26
+TOP_7 = 13
+TOP_8 = 6
+COL = [TOP_1, TOP_2, TOP_3, TOP_4, TOP_5, TOP_6, TOP_7, TOP_8]
+BOTTOM_1 = 4
+BOTTOM_2 = 17
+BOTTOM_3 = 27
+BOTTOM_4 = 22
+BOTTOM_5 = 18
+BOTTOM_6 = 23
+BOTTOM_7 = 24
+BOTTOM_8 = 25
+ROW = [BOTTOM_1, BOTTOM_2, BOTTOM_3, BOTTOM_4, BOTTOM_5, BOTTOM_6, BOTTOM_7, BOTTOM_8]
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(COL, GPIO.OUT, initial=GPIO.LOW)
+GPIO.setup(ROW, GPIO.OUT, initial=GPIO.HIGH)
+
+time.sleep(2)
+
+GPIO.cleanup()
